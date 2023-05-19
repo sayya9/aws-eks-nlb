@@ -1,0 +1,11 @@
+---
+replicaCount: 1
+
+clusterName: management
+
+serviceAccount:
+  create: false
+  name: aws-load-balancer-controller
+
+region: us-west-2
+vpcId: vpc-03f0931403a08b325
