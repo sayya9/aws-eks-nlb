@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: nginx-int
   namespace: default
 spec:
   strategy:
     type: Recreate
   selector:
     matchLabels:
-      app: nginx
+      app: nginx-int
   replicas: 2
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx-int
     spec:
       containers:
       - name: nginx
@@ -25,15 +25,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx
+  name: nginx-int
   namespace: default
   labels:
-    app: nginx
+    app: nginx-int
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-type: "external"
-    service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: "ip"
-    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
-    service.beta.kubernetes.io/aws-load-balancer-target-group-attributes: preserve_client_ip.enabled=true
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb-ip"
 spec:
   ports:
   - name: http
@@ -41,5 +38,5 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    app: nginx
+    app: nginx-int
   type: LoadBalancer

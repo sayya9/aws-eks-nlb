@@ -7,5 +7,5 @@ serviceAccount:
   create: false
   name: aws-load-balancer-controller
 
-region: us-west-2
-vpcId: vpc-03f0931403a08b325
+region: us-east-1
+vpcId: vpc-066f8d461f2a18600

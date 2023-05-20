@@ -4,7 +4,7 @@ kind: ClusterConfig
 
 metadata:
   name: management
-  region: us-west-2
+  region: us-east-1
 
 iam:
   withOIDC: true
@@ -14,4 +14,4 @@ iam:
       namespace: kube-system
     attachPolicyARNs:
     - "arn:aws:iam::${AWS_ACCOUNT_ID}:policy/AWSLoadBalancerControllerIAMPolicy"
-    roleName: management-us-west-2-aws-load-balancer-controller
+    roleName: management-us-uest-1-aws-load-balancer-controller
