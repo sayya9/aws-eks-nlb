@@ -139,8 +139,6 @@ kubectl get svc -n ingress-nginx ingress-nginx-controller
 # The output is as follows
 NAME                                 TYPE           CLUSTER-IP       EXTERNAL-IP                                                                     PORT(S)                      AGE
 ingress-nginx-controller             LoadBalancer   172.20.167.196   k8s-ingressn-ingressn-2e2fc803ab-5cd4d026da82e606.elb.us-east-1.amazonaws.com   80:32732/TCP,443:32075/TCP   78s
-ingress-nginx-controller-admission   ClusterIP      172.20.119.164   <none>                                                                          443/TCP                      78s
-ingress-nginx-defaultbackend         ClusterIP      172.20.249.114   <none>                                                                          80/TCP                       78s
 ```
 
 * **Internal** Ingress Controller
